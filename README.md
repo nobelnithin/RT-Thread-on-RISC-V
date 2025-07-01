@@ -12,3 +12,6 @@ Kernal Layer:
 
 Components and Service Layer: 
   Components are based on upper-level software on top of the RT-Thread kernel, such as [virtual file systems]([url](https://www.ibm.com/docs/en/aix/7.2.0?topic=concepts-virtual-file-systems)), [FinSH command line interface]([url](https://www.rt-thread.io/document/site/programming-manual/finsh/finsh/)) or console, device framework, Network Framework etc. 
+
+Open software Package Platform: 
+  Supports over 700 general purpose components to facilitate rapid developement for application developement.
