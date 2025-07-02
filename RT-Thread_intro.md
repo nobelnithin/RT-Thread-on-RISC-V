@@ -1,0 +1,11 @@
+# RT-Thread Kernel Introduction
+
+The kernel is the core of an operating system and serves as its most fundamental and essential component. It is responsible for managing system threads, inter-thread communication, the system clock, interrupts, and memory.
+
+The diagram below illustrates the RT-Thread kernel architecture, showing that the kernel sits above the hardware layer. The kernel section includes the kernel library and the real-time kernel implementation.
+
+![image](https://github.com/user-attachments/assets/10bf3de2-84dd-4e44-8661-d5723fb3e10d)
+
+Thread Scheduling:  The thread is the smallest scheduling unit in the RT-Thread operating system, which employs a preemptive multi-thread scheduling algorithm based on priority. In this system, only interrupt handlers, code that locks the scheduler, and code that disables interrupts are non-preemptible (meaning they cannot be interrupted). All other parts, including the thread scheduler itself, are preemptible.
+
+The system supports up to 256 thread priorities, which can be configured to a maximum of 32 or 8
