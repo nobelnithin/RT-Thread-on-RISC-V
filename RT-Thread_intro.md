@@ -14,3 +14,6 @@ The system supports up to 256 thread priorities, which can be configured to a ma
 ## Synchronization Between Threads
 RT-Thread implements inter-thread synchronization using semaphores, mutexes and group events. Threads synchronize by acquiring and releasing the semaphores and mutexes. Mutex employes the priority inheritence mechanism to address the common priority inversion problem found in the real time systems. The thread sysnchronization mechanism allows the thread to wait for the semaphores and mutexes based on their priority.
 Threads synchronize by sending and receiving events. The event group supports for both "OR-Triggered" and "AND-Triggered" multi scenarios, making them suitable for case where it need to wait for multiple events.
+
+## Inter Thread Communication
+RT-Thread supports communication mechanism such as mailboxes and message queues. Each message in the mailbox has fixed length of 4 bytes, where message queues can receive message of variable length and store them in their own memory space. Mailboxes are generally more efficient than queues. Sending operation can be done for both mailbox and queue safely by interrupt service routine(ISR). The communication mechanism allow thread to wait for the message based on the priority.
