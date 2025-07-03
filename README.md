@@ -3,7 +3,7 @@
 
 RT-Thread is a realtime operating system, which is written in C language. RT-Thread has two versions, Standard version and Nano version. For MCU like resource constrained system Nano version is useful because it requires only 3KB flash and 1.2KB RAM memory.
 
-RT-Thread's Architecture 
+### RT-Thread's Architecture 
 
 ![image](https://github.com/user-attachments/assets/360864c4-91a5-47df-8452-284756707e9a)
 
@@ -15,3 +15,7 @@ Components and Service Layer:
 
 Open software Package Platform: 
   Supports over 700 general purpose components to facilitate rapid developement for application developement.
+
+### RT-Thread Startup Process
+
+![image](https://github.com/user-attachments/assets/7b09ab22-d7d5-4de1-802e-1b0f688330a2)
