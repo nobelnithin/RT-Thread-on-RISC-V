@@ -18,3 +18,5 @@ The LIBC leveling layer is responsible for the interface with low level stub fuc
 3)IAR
 
 4)Visual Studio(WIN32)
+
+LIBC leveling layer ensure that standard C libraries provided by these four toolchains are balanced to consistent level. This leveling process requires no manual intervention from the user; it occurs automatically during project compilation based on the user's chosen platform and toolchain. Thus user can reference the LIBC functions using common header file without needing to differentiate between various compilers and toolchains. With the support of the LIBC library, RT-Thread can operate independently without relying on other third-party libraries. Additionally, due to RT-Thread's extensive support for the POSIX standard, application code developed using the RT-Thread POSIX interface can be easily ported to other platforms that also support POSIX standards.
