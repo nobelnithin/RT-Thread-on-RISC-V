@@ -4,3 +4,9 @@ The majority of embedded device includes various Input/Output devies. Ex. Displa
 ### Device Driver Framework in RT-Thread
 ![image](https://github.com/user-attachments/assets/8ef1da30-9aa4-4d25-9d9a-43c67bbb9438)
 
+The device object of RT-Thread is built upon the kernel object, where all the devices are regarded as class of object and fall under the object manager's scope. Each device object is derived from a base object, allowing each specific device to inherit attributes from its parent class while also deriving its own private attributes.
+
+### Inheritance and Derivation Relationships of Device Objects Diagram
+![image](https://github.com/user-attachments/assets/1c999259-5608-4bdb-9644-b5681cb71d21)
+
+
