@@ -28,6 +28,10 @@ As a real-time operating system(RTOS) with extensive network support, RT-Thread 
 ![image](https://github.com/user-attachments/assets/a57f3d58-dfbe-4412-87d2-e14daf5e957e)
 
 The commonly used functionalities such as AT,LwIP,Netdev and SAL are also loacted in ./rt-thread/components/net directory. These four foundational components enable a wide variety of network devices. They support various wired networking methods, which includes Ethernet interfaces, PHY-equipped ENC28J60,RJ45 Interface and W5500 modules that comes with their own network protocol stack.  All of these can be configured to meet device connectivity requirements through the net component. Wired Connectivity are more options for wireless networking. These includes 2G, 3G, 4G, CAT-1, CAT-4, NB-IoT, and even 5G is relayed on the base station operation for network access. Ex. SIM800, EC20, AIR720, L610, N58 and M5311 modules. Also wifi connectivity are enabled in the module such as ESP,W60x and RW007 which do not requires operator services.
+Most functionalities for the network devices are rely on core capabilities: AT and LwIP. For users and developers, the primary concept is Socket Abstraction layer(SAL).
+
+#### RT-Thread SAL Abstraction Layeer
+![image](https://github.com/user-attachments/assets/6148ced2-a517-4a55-8652-33e0908b91d7)
 
 
 
