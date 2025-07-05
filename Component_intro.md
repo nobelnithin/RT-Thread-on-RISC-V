@@ -33,5 +33,16 @@ Most functionalities for the network devices are rely on core capabilities: AT a
 #### RT-Thread SAL Abstraction Layeer
 ![image](https://github.com/user-attachments/assets/6148ced2-a517-4a55-8652-33e0908b91d7)
 
+SAL provides a programming interface commonly knows as socket interface.Through SAL interface user can use tools such as MQTT(MQ Telemetry Transport), NTP(Network Time Protocol), TFTP(Trivial File Transfer Protocol), TCP Client, TCP Server, WebClient, UDP Client, UDP server and WebNet. For example user can access website using WebClient,simulate Website using WebNet, Connect to various cloud platforms using MQTT, obtain precise time synchronization using NTP and transfer files over TFTP.
+
+
+## FinSh Console
+
+In the early days of computing, prior to the advent of graphical systems, there were no mice or even keyboards. How did people interact with computers back then? The earliest computers accepted commands via punched cards to input instructions and programs. As computers evolved, monitors and keyboards became standard components. However, operating systems at that time still did not support graphical interfaces. To bridge this gap, pioneers developed software that accepted user-input commands, interpreted them, and relayed them to the operating system, returning the results back to the user. This program acted as a shell, enveloping the operating system.
+
+Embedded devices often require communication between development boards and PCs, utilizing common connection methods such as serial ports, USB, Ethernet, and Wi-Fi. A flexible shell should support operation over various connection interfaces.  With a shell, a communication bridge is established between developers and the computer, allowing developers to easily access system status and control its operation via commands. This is especially beneficial during the debugging phase, as the shell enables developers to quickly identify issues and invoke test functions, adjust parameters, and reduce the frequency of code uploads, ultimately shortening project development time.
+
+
+
 
 
