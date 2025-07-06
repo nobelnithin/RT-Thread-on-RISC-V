@@ -42,6 +42,14 @@ In the early days of computing, prior to the advent of graphical systems, there 
 
 Embedded devices often require communication between development boards and PCs, utilizing common connection methods such as serial ports, USB, Ethernet, and Wi-Fi. A flexible shell should support operation over various connection interfaces.  With a shell, a communication bridge is established between developers and the computer, allowing developers to easily access system status and control its operation via commands. This is especially beneficial during the debugging phase, as the shell enables developers to quickly identify issues and invoke test functions, adjust parameters, and reduce the frequency of code uploads, ultimately shortening project development time.
 
+## Virtual File System
+
+In early embedded systems, data storage requirements were minimal, and the data types were fairly simple. It was common to store data by writing directly to specific addresses in the storage device. However, as embedded devices evolved and their functionality expanded, the volume and complexity of data grew significantly. Those old method of data storage become difficult,thus new method of data management was needed to simplify the data organization-this is where file systems comes in. A file system is the abstract data type, that impliment the storage, organization, access and data retrival. It servers mechanism that provides user to access underlying data. The basic unit of storage in most file systems is the file, meaning that data is organized in the form of individual files. As the number of files increases, issues such as difficulty in categorization and file name conflicts may arise. To address this, directories (or folders) serve as containers that hold multiple files, helping to organize and manage them more effectively.
+
+#### File system Directory structure
+![image](https://github.com/user-attachments/assets/7afef223-c189-4fac-ad47-a4da0f1ae707)
+
+
 
 
 
