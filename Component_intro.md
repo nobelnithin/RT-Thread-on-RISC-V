@@ -49,6 +49,29 @@ In early embedded systems, data storage requirements were minimal, and the data 
 #### File system Directory structure
 ![image](https://github.com/user-attachments/assets/7afef223-c189-4fac-ad47-a4da0f1ae707)
 
+#### Device file system (DFS)
+DFS is the virtual file system components provided by RT-Thread. The file system uses naming conventions similar to UNIX-style files and directories. 
+In RT-Thread's DFS (Device File System), the file system has a unified root directory, represented by "/". For example, a file named f1.bin in the root directory is referenced as /f1.bin, while a file f1.bin in the 2018 directory is referenced as /data/2018/f1.bin. The directory separator is "/", which is identical to UNIX/Linux but differs from Windows, where "" is used as the directory separator.
+
+The RT-Thread DFS (Device File System) component offers several key features:
+
+1) Provides a unified POSIX interface for file and directory operations, such as read, write, and  poll/select.
+
+2) Supports various types of file systems, including FatFS, RomFS, DevFS, and manages regular files, device files, and network file descriptors.
+
+3) Supports multiple types of storage devices, such as SD cards, SPI Flash, and NAND Flash.
+
+#### Architecture of DFS
+The architecture of DFS is primarly divided into three layers.
+
+1) The POSIX Interface Layer: DFS supports the standard POSIX interface. POSIX stands for Portable Operating System Interface of UNIX. It is a set of standards defined by IEEE that specifies the interface an operating system should provide to applications. The POSIX standard is a collection of API specifications designed to ensure software compatibility across different UNIX-based operating systems.
+2) The Virtual System Layer: Users can register specific file systems to DFS, such as FatFS, RomFS, DevFS, etc.
+3) The Device Abstraction layer: The device abstraction layer abstracts physical devices such as SD Card, SPI Flash, and Nand Flash into devices that are accessible to the file system.
+
+#### The Structure of File System Directory
+![image](https://github.com/user-attachments/assets/08db9125-5767-47e8-9c6b-0fdbbad6432a)
+
+
 
 
 
