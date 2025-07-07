@@ -71,7 +71,20 @@ The architecture of DFS is primarly divided into three layers.
 #### The Structure of File System Directory
 ![image](https://github.com/user-attachments/assets/08db9125-5767-47e8-9c6b-0fdbbad6432a)
 
+### POSIX Layer Interface
 
+The goal of POSIX standard to achieve the seource code level portability. In simple words the program written for a POSIX-compliant operating sysetm should be compile and run on other POSIX-Compliant system even if a different vendor. Since RT-Thread using POSIX Interface, the program written in Linux/Unix to RT-Thread operating system. In Unix-like systems, regular files, device files, and network file descriptors are treated as the same type of file descriptor. RT-Thread achieves this uniformity through DFS (Device File System). With this unified file descriptor mechanism, we can use the poll and select interfaces to perform unified polling across these different types of descriptors, simplifying program development. The poll and select interfaces allow a blocking operation to monitor a group of non-blocking I/O devices for events (such as readiness to read, readiness to write, priority error output, error occurrence, etc.) until one device triggers an event or a specified timeout is reached. This mechanism helps developers identify ready devices, reducing the complexity of programming.
+
+### Virtual File System Layer
+User can register specific file system to DFS in RT-Thread such as FatFS, RomFS, DevFS and others
+
+1) FatFS: A file system compatible with Microsoft's FAT format, specifically designed for the small embedded devices. Written in ANSI C it has excellent portability and hardware independance, making it widely used file system type in RT-Thread.
+
+2) RomFS: A traditional, simple, and compact read-only file system. It doesn't support dynamic writting but store data sequentially, allowing application to run with XIP(Excute In Place) during system operation saving RAM space.
+
+3) DevFS (Device File System): Allowing devices in RT-Thread system to virtualized as file under the /dev directory. Once enabled, device can be operated using standaed file operation such as read and write.
+
+4) JFFS2
 
 
 
