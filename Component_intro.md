@@ -84,8 +84,26 @@ User can register specific file system to DFS in RT-Thread such as FatFS, RomFS,
 
 3) DevFS (Device File System): Allowing devices in RT-Thread system to virtualized as file under the /dev directory. Once enabled, device can be operated using standaed file operation such as read and write.
 
-4) JFFS2
+4) JFFS2(Journaling Flash File System 2): A log based file system primarly used for NOR flash. It operates on MTD(Memory Technology Device) layer and support read/write operation, data compression, hash-table-based journaling, crash/power failure protection, and wear-leveling.
 
+5) NFS(Networking File System): A technology that enables file sharing between different machines and operating systems over a network. During OS development and debugging, NFS can be used to mount a root file system on an embedded device, simplifying modifications to the root file system from the host machine.
+
+6) UFFS(Ultra low cost flash file system): An open-source file system developed specifically for embedded devices with small memory environments using NAND Flash. Compared to other commonly used file systems like YAFFS, UFFS offers lower resource usage, faster boot speeds, and is free to use.
+
+### Device Abstraction Layer:
+The device abstraction layer transforms physical devices, such as SD Cards, SPI Flash, and NAND Flash, into devices that the file system can access. For example, the FAT file system requires that the storage device must be of the block device type. Different types of file systems are implemented independently from the storage device drivers. Therefore, only by connecting the underlying storage device's driver interface to the file system can the file system function properly.
+
+### File system mounting method
+
+The file system initialization process generally consists of the following steps:
+
+1) Initialize the DFS component
+2) Initialize the specific type of file system
+3) Create a block device on the storage medium
+4) Format the block device
+5) Mount the block device to the DFS directory
+
+When the file system is no longer needed, it can be unmounted.
 
 
 
