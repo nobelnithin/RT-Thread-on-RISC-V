@@ -107,5 +107,21 @@ When the file system is no longer needed, it can be unmounted.
 
 ### Ulog log
 
+Logging involves capturing and outputting information about the software's operational state and process to various media to viewing and storage. This functionality is servers as a functionality for debugging, issue tracking, performance analysis,system monitoring, fault warning.  It can be said that logging usage accounts for at least 80% of a software's lifecycle. For operating systems, the inherent complexity of software makes single-step debugging unsuitable in many scenarios; hence, a robust logging component is virtually standard in operating systems. An effective logging system significantly enhances the efficiency of operating system debugging. ulog is a straightforward and user-friendly C/C++ logging component, with the first letter "u" representing "μ," indicating its micro nature. It achieves a minimal resource footprint with ROM < 1K and RAM < 0.2K. Despite its small size, ulog offers a comprehensive set of features, drawing design inspiration from another open-source C/C++ logging library, EasyLogger (elog), while making significant improvements in functionality and performance. The main features include:
 
+Diverse Output Backends: Supports various output mediums such as serial ports, networks, files, and flash memory
+
+Thread-Safe Design: Logging output is designed to be thread-safe and supports asynchronous output modes
+
+High Reliability: The logging system remains functional even in complex environments like interrupt service routines (ISR) and hard faults
+
+Flexible Output Level Configuration: Supports setting output levels at runtime or compile time
+
+Global Filtering: Log content can be globally filtered by keywords and tags
+
+Compatibility with Linux Syslog: The API and log format are compatible with Linux syslog
+
+Hexadecimal Dumping: Supports dumping debug data to logs in hex format
+
+API Compatibility: Compatible with the logging output API of rtdbg (RT-Thread's earlier logging header file) and EasyLogger
 
