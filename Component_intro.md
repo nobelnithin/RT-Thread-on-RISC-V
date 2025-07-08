@@ -125,3 +125,9 @@ Hexadecimal Dumping: Supports dumping debug data to logs in hex format
 
 API Compatibility: Compatible with the logging output API of rtdbg (RT-Thread's earlier logging header file) and EasyLogger
 
+#### RT-Thread Ulog
+![image](https://github.com/user-attachments/assets/80dc0ce7-3cc7-403c-9fc2-a4ea3a2b78dc)
+
+FrontEnd: This layer is closest to application layer, and provide users with two types of API Interfaces, Syslog and LogX
+
+
