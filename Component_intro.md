@@ -147,4 +147,62 @@ Specifically, the test code targeting a particular functionality is considered a
 
 A test unit refers to a specific testing point derived from the breakdown of the functionality being tested. Each test point serves as the smallest measurable unit of the functionality under examination. It is important to note that different classification methods can yield varying sets of test units. The application block diagram of the utest framework is shown in the figure on the right.
 
+The UTEST testing framework exports all test cases to the UtestTcTab code segment. In the IAR and MDK compilers, there is no need to define the UtestTcTab section in the linker script. However, when using GCC, it is necessary to explicitly set up the UtestTcTab section in the linker script.
+
+Therefore, for test cases to compile and run under GCC, the UtestTcTab code segment must first be defined in the GCC linker script.
+
+To add the definition of the UtestTcTab section in the .text segment of the GCC linker script, use the following format:
+
+```
+/* section information for utest */
+. = ALIGN(4);
+__rt_utest_tc_tab_start = .;
+KEEP(*(UtestTcTab))
+__rt_utest_tc_tab_end = .;
+```
+
+
+```
+msh />utest_list
+
+[14875] I/utest: Commands list :
+
+[14879] I/utest: [testcase name]:components.filesystem.dfs.dfs_api_tc; [run timeout]:30
+
+[14889] I/utest: [testcase name]:components.filesystem.posix.posix_api_tc; [run timeout]:30
+
+[14899] I/utest: [testcase name]:packages.iot.netutils.iperf.iperf_tc; [run timeout]:30
+
+msh />utest_run components.filesystem.dfs.dfs_api_tc
+
+[83706] I/utest: [==========] [ utest    ] started
+
+[83712] I/utest: [----------] [ testcase ] (components.filesystem.dfs.dfs_api_tc) started
+
+[83721] I/testcase: in testcase func...
+
+[84615] D/utest: [    OK    ] [ unit     ] (test_mkfs:26) is passed
+
+[84624] D/testcase: dfs mount rst: 0
+
+[84628] D/utest: [    OK    ] [ unit     ] (test_dfs_mount:35) is passed
+
+[84639] D/utest: [    OK    ] [ unit     ] (test_dfs_open:40) is passed
+
+[84762] D/utest: [    OK    ] [ unit     ] (test_dfs_write:74) is passed
+
+[84770] D/utest: [    OK    ] [ unit     ] (test_dfs_read:113) is passed
+
+[85116] D/utest: [    OK    ] [ unit     ] (test_dfs_close:118) is passed
+
+[85123] I/utest: [  PASSED  ] [ result   ] testcase (components.filesystem.dfs.dfs_api_tc)
+
+[85133] I/utest: [----------] [ testcase ] (components.filesystem.dfs.dfs_api_tc) finished
+
+[85143] I/utest: [==========] [ utest    ] finished
+```
+#### Analysis of UTEST Execution Results
+
+![image](https://github.com/user-attachments/assets/00e01f64-1cf3-4671-a4be-6b9ac3cf4dd4)
+
 
