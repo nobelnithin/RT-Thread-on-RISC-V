@@ -128,6 +128,23 @@ API Compatibility: Compatible with the logging output API of rtdbg (RT-Thread's 
 #### RT-Thread Ulog
 ![image](https://github.com/user-attachments/assets/80dc0ce7-3cc7-403c-9fc2-a4ea3a2b78dc)
 
-FrontEnd: This layer is closest to application layer, and provide users with two types of API Interfaces, Syslog and LogX
+FrontEnd: This layer is closest to application layer, and provide users with two types of API Interfaces, Syslog and Log_X
+
+Core: The main work of the middle core layer is to format and file the logs passed by the upper layer, and then generate the log frames and finally output them to the output to the lower-end back-end devices through various output modules.
+
+Backend: After receiving the log frames sent from the core layer, the logs are output to the registered log backend devices, such as files, consoles, log servers, and so on.
+
+### UTEST(Unit Test) Framework
+
+UTEST is a Unit Test Frmework developed for the RT-Thread. The primary design goal of UTEST is to provide RT-Thread developer with a unified framework interface for the writing test programs, enabling the execution of unit tests, coverage tests, and integration tests efficiently. A test case (abbreviated as "tc") is a single test executed to achieve a specific testing objective. It encompasses the test inputs, execution conditions, testing procedures, and expected outcomes, forming a finite loop with clear termination conditions and defined results.
+
+In the UTEST (unit test) framework, user-defined test programs are defined as test cases. Each test case contains a single test case function (similar to a main function) and may include multiple unit test functions.
+
+#### Application Block Diagram of UTEST Framework
+![image](https://github.com/user-attachments/assets/c90ce73f-938c-4cf9-861a-daa437c9f140)
+
+Specifically, the test code targeting a particular functionality is considered a test case when implemented using the APIs provided by the utest testing framework.
+
+A test unit refers to a specific testing point derived from the breakdown of the functionality being tested. Each test point serves as the smallest measurable unit of the functionality under examination. It is important to note that different classification methods can yield varying sets of test units. The application block diagram of the utest framework is shown in the figure on the right.
 
 
