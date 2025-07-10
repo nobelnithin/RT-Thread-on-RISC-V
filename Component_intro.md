@@ -206,3 +206,27 @@ msh />utest_run components.filesystem.dfs.dfs_api_tc
 ![image](https://github.com/user-attachments/assets/00e01f64-1cf3-4671-a4be-6b9ac3cf4dd4)
 
 
+## Online Packages
+RT-Thread offers a diverse array of software packages, categorized primarily into following areas: IoT, Peripherals, Systems, Programming Language, Tools, Miscellaneous, Multimedia, Security, Embedded AI, Signal Processing and Control, RTDuino.
+
+1) IoT: The Internet of Things (IoT) category includes software packages that focus on network connectivity, cloud access, and various aspects of digital communication.
+
+2) Peripherals: It category features software packages that enables intraction between external devices. These packages pertain to the underlying peripheral hardware and include sensor-related packages.
+
+3) System: System level software packages are designed to monitor the system behavior and manage file system efficiently.
+
+4) Programming Languages: This category include various programming language, script and interpreters that can be executed in terminal environment.
+
+5) Tools: Various types of software packages intented to use the developement and testing.
+
+6) Miscellaneous: This category encompasses packages that do not fit into any of the aforementioned categories, including demonstrations and examples.
+
+7) Multimedia: Packages for Audio and Video processing in RT-Thread platform.
+
+8) Security: This category includes encryption algorithms and secure transport layer protocols to enhance system security.
+
+9) Embedded AI: RT-Thread's software packages focus on the Embedded AI applications.
+
+10) RTDuino: RTDuino is the core projects of the Arduino ecosystem library that can be directly executed on the RT-Thread operating system via RTDuino.
+
+
