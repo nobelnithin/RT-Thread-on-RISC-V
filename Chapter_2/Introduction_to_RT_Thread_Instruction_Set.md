@@ -17,3 +17,9 @@ RISC-V has six basic instruction formats: R, I, S, B, U, J.
 2) I-Type Instructions: Used for Register-to-Register arithmetic operations and read/load memory operations.
 
 3) S-Type Instructions: For write/store in memory.
+
+4) B-Type Instructions: For conditional jump operations.
+
+5) U-type Instructions: For high 20-bit immediate number (long immediate number) operations.
+
+6) J-Type Instructions: For unconditional jump operations.
