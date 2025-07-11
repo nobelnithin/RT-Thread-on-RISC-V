@@ -31,3 +31,21 @@ There are only six formats of RISC-V instructions, and their instruction formats
 2) The identifiers for reading and writing registers are in the same location, so the registers can be accessed before decoding the instruction.
   
 3) The immediate numeric segment is a sign extension, and the sign bit is kept in the highest bit.
+
+#### The composition of 6 Instruction Structures
+<img width="970" height="354" alt="image" src="https://github.com/user-attachments/assets/5f201005-9561-4a6f-a8b4-3738529a9625" />
+
+Opcode: This is a single instruction, which represent type of instruction.
+
+rd: Distination Operation Register. This field holds the encoding of the destination register, which is used to hold the result of the operation.
+
+funct3: Function code field. This field occupies 3bits.
+
+rs1: First Source operand register.
+
+rs2: Second Source operand register.
+
+funct7: Function Code Field. This occupies 7bits.
+
+imm: Immediate digital field
+
