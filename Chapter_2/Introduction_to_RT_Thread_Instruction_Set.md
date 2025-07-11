@@ -23,3 +23,11 @@ RISC-V has six basic instruction formats: R, I, S, B, U, J.
 5) U-type Instructions: For high 20-bit immediate number (long immediate number) operations.
 
 6) J-Type Instructions: For unconditional jump operations.
+
+There are only six formats of RISC-V instructions, and their instruction formats have the following characteristics:
+
+1) All Instructions are 32-bits in length, first 7 bits are opcode, which is a sigle instruction that executed by CPU
+
+2) The identifiers for reading and writing registers are in the same location, so the registers can be accessed before decoding the instruction.
+  
+3) The immediate numeric segment is a sign extension, and the sign bit is kept in the highest bit.
