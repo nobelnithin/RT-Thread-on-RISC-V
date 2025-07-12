@@ -49,3 +49,44 @@ funct7: Function Code Field. This occupies 7bits.
 
 imm: Immediate digital field
 
+## RISC V Instruction Set
+
+### R Type Instructions
+
+The lowest 7 bits are reserved for the opcode, and identifying the opcode identifies whether it is R type instruction or not. According to the funct3 and funct7 field, the specific execution operation can be derived. According to rs1, rs2 and rd, the specific operation can be executed.
+
+#### R Type Instruction for RV32
+<img width="1034" height="406" alt="image" src="https://github.com/user-attachments/assets/852c9e03-ace0-4aea-8787-e68b47ed2fdd" />
+
+#### Examples of Use of R Type Instructions
+
+1) Add the values in register a1 and register a2 and store the result in register a0.
+   ```
+   a0 = a1 + a2
+   ```
+   ```
+   add a0, a1, a2
+   ```
+2) Subtract the values in register a1 and register a2 and store the result in register a0.
+   ```
+   a0 = a1 - a2
+   ```
+   ```
+   sub a0, a1, a2
+   ```
+3) Shif the values in registers a1 by a2 bits to left, lower by 0, and store the data in register a0.
+   ```
+   a0 = a1 << a2
+   ```
+   ```
+   sll a0, a1, a2
+   ```
+4) Shift the value in register a1 right by a2 bits, high by 0, and store the result in register a0
+   ```
+   a0 = a1 >> a2
+   ```
+   ```
+   srl a0, a1, a2
+   ```
+
+
